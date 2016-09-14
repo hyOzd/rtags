@@ -1,0 +1,27 @@
+Source: rtags
+Section: devel
+Priority: optional
+Maintainer: Hasan Yavuz ÖZDERYA <hy@ozderya.net>
+Build-Depends: debhelper (>= 8.0.0), llvm-3.5-dev (>= 3.5), libclang-3.5-dev (>= 3.5), cmake (>= 2.8), gcc (>= 4.7)
+Standards-Version: 3.9.4
+Homepage: https://github.com/Andersbakken/rtags
+#Vcs-Git: git://git.debian.org/collab-maint/rtags.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/rtags.git;a=summary
+
+Package: rtags
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, llvm-3.5 (>= 3.5), libclang1-3.5 (>= 3.5)
+Suggests: emacs 
+Description: C/C++ code indexer, completion and navigation daemon 
+ RTags is a client/server application that indexes C/C++ code and keeps a
+ persistent file-based database of references, declarations, definitions,
+ symbolnames etc. There’s also limited support for ObjC/ObjC++. It allows you to
+ find symbols by name (including nested class and namespace scope). Most
+ importantly we give you proper follow-symbol and find-references support. We
+ also have neat little things like rename-symbol, integration with clang’s
+ “fixits” (http://clang.llvm.org/diagnostics.html). We also integrate with
+ flymake using clang’s vastly superior errors and warnings. Since RTags
+ constantly will reindex “dirty” files you get live updates of compiler errors
+ and warnings. Since we already know how to compile your sources we have a way
+ to quickly bring up the preprocessed output of the current source file in a
+ buffer.
